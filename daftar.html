@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootskool | Daftar Kursus</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigasi Kiri -->
+  <nav class="navbar">
+    <ul>
+  <li>
+    <a href="index.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+      Home
+    </a>
+  </li>
+  <li>
+    <a href="daftar.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14l4-4h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+      </svg>
+      Daftar Kursus
+    </a>
+  </li>
+  <li>
+    <a href="pilih.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+        <path d="M7 10l5 5 5-5z"/>
+      </svg>
+      Pilih Jadwal
+    </a>
+  </li>
+</ul>
+  </nav>
+  <!-- Konten -->
+ <main class="container">
+    <h1>Form Pendaftaran Kursus</h1>
+    <form id="formDaftar">
+      <label for="nik">NIK:</label><br />
+      <input type="text" id="nik" required /><br /><br />
+
+      <label for="nama">Nama:</label><br />
+      <input type="text" id="nama" required /><br /><br />
+
+      <label for="alamat">Alamat:</label><br />
+      <textarea id="alamat" rows="3" required></textarea><br /><br />
+
+      <label>Jenis Kelamin:</label><br />
+      <input type="radio" name="gender" value="Laki-laki" required /> Laki-laki
+      <input type="radio" name="gender" value="Perempuan" /> Perempuan<br /><br />
+
+      <button type="submit">Daftar</button>
+    </form>
+
+    <hr />
+
+    <h3>Data Pendaftar:</h3>
+    <table id="tabelOutput" border="1" cellpadding="10" cellspacing="0">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>NIK</th>
+          <th>Nama</th>
+          <th>Alamat</th>
+          <th>Jenis Kelamin</th>
+          <th>Waktu Daftar</th>
+          <th>Tanggal Daftar</th>
+        </tr>
+      </thead>
+      <tbody id="output">
+        <!-- baris data -->
+      </tbody>
+    </table>
+
+    <!-- Total Pendaftar -->
+    <p id="totalPendaftar" style="margin-top: 10px; font-weight: bold;">Saat ini sudah terdaftar: 0 peserta</p>
+
+    <section class="api-waktu">
+      <h3>Jam Sekarang</h3>
+      <p id="jam">--:--:--</p>
+    </section>
+  </main>
+
+  <!-- Script -->
+  <script>
+    let nomorUrut = 1; // inisialisasi nomor urut
+    let totalPendaftar = 0; // total peserta
+
+    // Tampilkan jam lokal
+    function tampilkanJam() {
+      const now = new Date();
+      const waktu = now.toLocaleTimeString('id-ID', { hour12: false });
+      document.getElementById("jam").innerText = waktu + " WIB";
+    }
+    setInterval(tampilkanJam, 1000);
+    tampilkanJam();
+
+    // Handle submit
+    document.getElementById("formDaftar").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nik = document.getElementById("nik").value;
+      const nama = document.getElementById("nama").value;
+      const alamat = document.getElementById("alamat").value;
+      const gender = document.querySelector('input[name="gender"]:checked').value;
+
+      const now = new Date();
+      const waktuDaftar = now.toLocaleTimeString('id-ID', { hour12: false });
+      const hariTanggal = now.toLocaleDateString('id-ID', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+      });
+
+      alert("Pendaftaran Diterima!\nTerima kasih telah mendaftar, " + nama + ".");
+
+      const tabel = document.getElementById("output");
+      const baris = document.createElement("tr");
+
+      baris.innerHTML = `
+        <td>${nomorUrut}</td>
+        <td>${nik}</td>
+        <td>${nama}</td>
+        <td>${alamat}</td>
+        <td>${gender}</td>
+        <td>${waktuDaftar} WIB</td>
+        <td>${hariTanggal}</td>
+      `;
+
+      tabel.appendChild(baris);
+      nomorUrut++;
+      totalPendaftar++;
+
+      // Update jumlah pendaftar
+      document.getElementById("totalPendaftar").innerText =
+        "Saat ini sudah terdaftar: " + totalPendaftar + " peserta";
+
+      // Reset form
+      document.getElementById("formDaftar").reset();
+    });
+  </script>
+</body>
+</html>

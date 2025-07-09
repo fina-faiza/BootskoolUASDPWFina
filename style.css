@@ -1,0 +1,238 @@
+/* Umum */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #7a4f0a;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+li {
+    text-align: left;
+}
+
+.profil p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Container Konten Utama */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navigasi */
+/* Navbar Samping Kiri */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  background-color: #654108;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.navbar li {
+  width: 100%;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #a47a16;
+}
+
+.navbar a svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Penyesuaian konten agar tidak tertutup navbar */
+.container {
+  margin-left: 240px; /* Sesuaikan dengan lebar navbar */
+  padding: 30px;
+  max-width: calc(100% - 240px);
+}
+
+
+/* Profil */
+.profil {
+  margin: 30px 0;
+}
+
+.foto-profil {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #654108;
+}
+
+/* Video Profil */
+.video-profil video {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* API Waktu */
+.api-waktu p {
+  margin-top: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+/*daftar*/
+form {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form input[type="radio"] {
+  margin-right: 5px;
+}
+
+form button {
+  background-color: #654108;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #a47a16;
+}
+
+.kotak-output {
+  background-color: #f9f9f9;
+  border-left: 5px solid #654108;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+/* Posisi tabel di tengah */
+table {
+  margin: 20px auto; /* ini yang membuat tabel berada di tengah */
+  width: 90%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color:  #654108;
+  color: white;
+}
+
+td, th {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Paragraf total peserta di tengah */
+#totalPendaftar {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+/*PILIH*/
+select, input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+table {
+  margin: 20px auto;
+  width: 90%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color:  #654108;
+  color: white;
+}
+
+td, th {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+a.download-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #654108;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+a.download-btn:hover {
+  background:#a47a16;
+}

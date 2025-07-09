@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootskool | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigasi -->
+  <nav class="navbar">
+    <ul>
+  <li>
+    <a href="index.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+      Home
+    </a>
+  </li>
+  <li>
+    <a href="daftar.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14l4-4h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+      </svg>
+      Daftar Kursus
+    </a>
+  </li>
+  <li>
+    <a href="pilih.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+        <path d="M7 10l5 5 5-5z"/>
+      </svg>
+      Pilih Jadwal
+    </a>
+  </li>
+</ul>
+
+  </nav>
+
+  <!-- Konten Utama -->
+  <main class="container">
+    <h1>Selamat Datang di Bootskool!</h1>
+    <p>Bootskool adalah platform kursus daring yang mengadopsi pendekatan bootcamp-style learning, yaitu pembelajaran intensif yang difokuskan pada penguasaan keterampilan praktis dalam waktu singkat. Bootskool dirancang untuk menjawab kebutuhan masyarakat modern yang ingin meningkatkan kompetensi tanpa harus mengikuti pendidikan formal yang panjang.
+
+Kami menyediakan berbagai program kursus berkualitas di bidang:
+
+    <li>Teknologi Informasi (Web Development, UI/UX, Data Analyst)</li>
+
+    <li>Desain Kreatif (Graphic Design, Motion Design)</li>
+
+    <li>Kewirausahaan dan Bisnis Digital</li>
+
+    <li>Bahasa dan Komunikasi</li>
+
+    <li>Keterampilan Soft Skill dan Karakter</li>
+
+<p>Fitur Unggulan Bootskool:</p>
+
+    <li>🎯 Fokus pada Skill Praktis: Materi dikemas singkat, padat, dan langsung dapat diterapkan.</li>
+
+    <li>👨‍🏫 Mentor Profesional: Dipandu oleh instruktur berpengalaman di bidangnya.</li>
+
+    <li>💻 Pembelajaran Fleksibel: Bisa diakses kapan saja dan di mana saja melalui website. </li>
+
+    <li>🧩 Interaktif dan Menyenangkan: Disertai video, kuis, dan proyek mini untuk latihan langsung.</li>
+
+    <li>📜 Sertifikat Digital: Setiap peserta akan mendapatkan sertifikat sebagai bukti kompetensi.</li>
+
+<p>Bootskool terbuka untuk semua kalangan—mulai dari pelajar, mahasiswa, fresh graduate, hingga pekerja yang ingin upgrade skill atau bahkan beralih karier.
+
+Bersama Bootskool, belajar tidak lagi membosankan, tapi menjadi langkah nyata menuju masa depan yang lebih baik dan berdaya saing.</p>
+
+    <section class="profil">
+        <h2>Contact Me</h2>
+      <img src="fina.jpg" alt="Foto Profil" class="foto-profil" />
+      <h3>Fina Faizatur Rofi'ah</h3>
+      <p>0858-1277-0938</p>
+    </section>
+
+    <section class="video-profil">
+      <h3>Video Profil</h3>
+      <video width="400" controls>
+        <source src="Video.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+      </video>
+    </section>
+
+    <section class="api-waktu">
+      <h3>Jam Sekarang</h3>
+      <p id="jam">--:--:--</p>
+    </section>
+  </main>
+
+ <script>
+  function tampilkanJam() {
+    const now = new Date();
+    const waktu = now.toLocaleTimeString('id-ID', { hour12: false });
+    document.getElementById("jam").innerText = waktu + " WIB";
+  }
+
+  setInterval(tampilkanJam, 1000); // Update setiap detik
+  tampilkanJam(); // Tampilkan langsung saat load
+</script>
+
+</body>
+</html>
